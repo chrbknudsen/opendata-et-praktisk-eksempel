@@ -1,0 +1,33 @@
+Åbne tidsskrift data
+========================================================
+author: Christian Knudsen
+date: 
+autosize: true
+
+Hvorfor er det vigtigt
+========================================================
+
+Det har andre talt om - men vi tænkte at vi lige ville vise en demo.
+
+Meget primitivt
+========================================================
+
+Vi har ikke gang i noget særligt her. I samarbejde med Datalab på KUB-Nord på Nørre Alle er der pt gang i et projekt med professor
+Rasmus Bro, der laver maskinlæring på abstracts fra den kemiske litteratur. Det er rimelig cool. Men de har ikke mere end
+lige fået adgang til data. Så det kunne vi desværre ikke vise frem.
+
+Så i stedet
+========================================================
+
+Dette er tidsskriftet
+Det er interessant primært fordi det er tilgængeligt. 
+Vi har diverse metadata. Og vi har adgang til abstracts.
+Det dækker en periode.
+Når jeg underviser kemistuderende, bliver de ofte forskrækkede over at støde på referencer til tysksproget litteratur.
+Da jeg skrev mit speciale, lærte jeg en tommelfinger regel. Hvis vi havde en eller anden uorganisk forbindelse, så var der formentlig en tysker der havde gjort noget mærkeligt med den i mellemkrigsårene.
+Det gør de, altså støder på tyske artikler - fordi tysk fra ca. 1850 til et pænt stykke op i 1930'erne, var det primære kemiske fagsprog. Før da
+fyldte fransk en del. Engelsk var der naturligvis også. 
+
+Men er det skift noget vi kan kvantificere?
+
+Vi skulle nok have fat i endnu ældre litteratur for at se skiftet ske live. Men vi kan studere de sidste rester af non-engelsk kemisk litteratur.
