@@ -7,7 +7,11 @@ autosize: true
 Hvorfor er det vigtigt
 ========================================================
 
-Det har andre talt om - men vi tænkte at vi lige ville vise en demo.
+Vi taler meget om vigtigheden af åbne data. 
+
+Her vil vi demonstrere hvad de giver mulighed for.
+
+
 
 Meget primitivt
 ========================================================
@@ -16,15 +20,47 @@ Vi har ikke gang i noget særligt her. I samarbejde med Datalab på KUB-Nord på
 Rasmus Bro, der laver maskinlæring på abstracts fra den kemiske litteratur. Det er rimelig cool. Men de har ikke mere end
 lige fået adgang til data. Så det kunne vi desværre ikke vise frem.
 
-<<<<<<< HEAD
+
 Men uanset hvor primitivt det er - så illustrerer det fint hvordan man egentlig gør. Og det er måske interesssant for os at se, hvordan processen kan være. Også selvom der er meget mere avancerede ting man kan give sig i kast med.
 
-=======
->>>>>>> 00f70180d126121f88dbf29e1147bc423ad49a17
-Så i stedet
+
+
+Så i stedet - et primitivt forskningsspørgsmål
 ========================================================
 
-Dette er tidsskriftet
+Tommelfingerregel i den uorganiske kemi:
+
+Hvis nogen har gjort et eller andet bizart med en uorganisk forbindelse - så var det formentlig en tysker der gjorde det i mellemkrigsårene.
+
+Derfor skal man kunne lidt tysk som kemiker.
+
+Det videnskabelige fagsprog er i dag engelsk. Der var engang hvor det var tysk. Eller fransk. 
+
+Hvordan skete det skift?
+
+Eller: Hvordan var udviklingen i de forskellige sprog som artikler i et bestemt tidsskrift blev skrevet på?
+
+
+Acta Chemica Scandinavica
+========================
+
+Dette er tidsskriftet. Acta Chemica Scandinavica.
+
+Tidsskriftet ligger åbent tilgængeligt.
+
+Vi har diverse metadata. Og abstracts.
+
+Primært interessant fordi det hele er helt frit tilgængeligt.
+
+Vi kan høste det hele 
+
+Det gør vi sådan her.
+
+Her er noget jeg har forberedt tidligere.
+
+
+Jeg har nu hvad der basalt set er et regneark, med forskellige data
+
 Det er interessant primært fordi det er tilgængeligt. 
 Vi har diverse metadata. Og vi har adgang til abstracts.
 Det dækker en periode.
