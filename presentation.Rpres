@@ -13,11 +13,14 @@ Derfor:
 
 * En demonstration af hvordan det egentlig gøres
 
-
+```{r, echo = FALSE}
 # dagsordenen: jo ikke kun at demonstrere at vi kan blive klogere
 # af at have adgang til data. Men også at vise hvordan processen egentlig er
 # Vi har jo ret godt styr på hvordan forskningsprocessen egentlig er, men det her
 # er for mange af os en ny facet.
+
+```
+
 
 
 Meget primitivt
@@ -30,7 +33,7 @@ Der var engang hvor tysk var det dominerende sprog i kemien.
 Det skiftede til engelsk.
 
 Hvordan så det skift egentlig ud i de nordiske lande?
-
+```{r, echo=FALSE}
 #Det er ikke noget særligt. Datalab på KUB-Nord assisterer pt. professor Rasmus Bro
 # med adgang til ret store mængder data med henblik på at lave maskinlæring på 
 # Abstracts på den kemiske litteratur. Det er ret cool, men de er ikke kommet så 
@@ -40,27 +43,39 @@ Hvordan så det skift egentlig ud i de nordiske lande?
 # til af data. Og det er:
 
 
+```
+
+
 Acta Chemica Scandinavica
 ========================
 
+```{r, out.width = "100%", echo=FALSE, out.position="center"}
+knitr::include_graphics("acta.png")
+```
 
-![optional caption text](acta.png)
 
 
+```{r, echo =FALSE}
 # Tidsskriftet ligger åbent tilgængeligt.
 
 # Vi har diverse metadata. 
 
 # Primært interessant fordi det hele er helt frit tilgængeligt.
+```
+
+
 
 Vi kan høste det hele 
 ====================
+```{r, echo=FALSE}
 
 # Jeg springer en del tekniske detaljer over. 
 
-* laver vi en liste over de adresser vi skal hente data fra
+```
+
+* Først laver vi en liste over de adresser vi skal hente data fra
 * Så henter vi data - og her nøjes vi med årgang og artikeltitler
-* så regner vi ud hvilket sprog hver enkelt artikel er skrevet på
+* Så regner vi ud hvilket sprog hver enkelt artikel er skrevet på
 
 Og så ser vi resultatet
 
@@ -128,6 +143,9 @@ getPaperDetails <- function(paper, volid){
 }
 ```
 
+
+```{r, echo=FALSE}
+
 # ja, det er ret langhåret. Men det her er hvad vores brugere ville gøre hvis
 # de ville trække den slags metadata fra en af vores ressourcer. Pointen er, at 
 # hvis de skal kunne det, skal vi sikre at dataene er tilgængelige.
@@ -137,9 +155,12 @@ getPaperDetails <- function(paper, volid){
 # Mere strukturerede adgange ville kunne gøre det hurtigere, men ofte vil brugerne
 # under alle omstændigheder skulle gøre denne type af ting for at få fingre i data.
 
+```
+
 Læring?
 =====================================
-Hvis ikke vi sikrer adgang til metadata på ressourcerne - skal vores brugere gøre arbejdet.
+* Hvis ikke vi sikrer adgang til metadata på ressourcerne - skal vores brugere gøre arbejdet.
+* Endda noget ret bøvlet arbejde
 
 En fin tabel
 ================================
@@ -148,17 +169,19 @@ En fin tabel
 load("test.Rda")
 masterDF[1:6, c(2,3,7)]
 ```
-Det er bare et udsnit.
+
 
 Nærmere kig
 =======================
 ``` {r, echo = FALSE}
-table(masterDF$language)
+kable(table(masterDF$language))
 ```
 
 Læring 2
 ========================
-Kvaliteten af metadata i de ressourcer vi betaler for er rigtig vigtig!
+* Kvaliteten af metadata i de ressourcer vi betaler for er rigtig vigtig!
+* Er den ikke god nok - skal vores brugere lave arbejdet
+* Og det er besværligt
 
 Rensning af data
 =========================
@@ -212,47 +235,66 @@ for(i in 1:length(english_papers)){
 table(masterDF$language)
 ```
 
-Læring:
-Manglende adgang til metadata koster vores brugere tid.
+## Læring:
 
+* Manglende adgang til metadata koster vores brugere tid.
+
+```{r, echo=FALSE}
 # For næste gang er det ikke sprog der er interessant. 
+
+```
+
 
 Hvordan gik det så med tysk?
 ==========================================
-```{r}
+```{r, echo = FALSE, result=FALSE}
+library(extrafont)
 languagetable <- table(masterDF$year, masterDF$language)
-View(languagetable)
-plot(languagetable[,3], type="l")
-languagetable
-prop.table(languagetable,1)
+#View(languagetable)
+# plot(languagetable[,3], type="l")
+#languagetable
+#prop.table(languagetable,1)
 plotdata <- as.data.frame(prop.table(languagetable,1)[,3]*100)
 plotdata <- cbind(rownames(plotdata), data.frame(plotdata, row.names=NULL))
 colnames(plotdata) <- c("year", "freq")
 
 library(ggplot2)
-plotdata
-ggplot(plotdata, aes(x=plotdata$year, y = plotdata$freq, group=1)) +
-  geom_line() +
-  theme_minimal()
+#plotdata
+p <- ggplot(plotdata, aes(x=plotdata$year, y = plotdata$freq, group=1)) +
+  geom_line(size=1.5) +
+  scale_x_discrete(breaks=seq(1948,1999,5)) +
+  labs(title="Andel artikler på tysk i Acta Chemica Scandinavica") +
+  labs(x = "År", y = "%") +
+  theme(axis.line.x=element_line(size= 0.5, colour = "black"),
+        axis.line.y=element_line(size= 0.5, colour = "black"),
+        axis.text.x = element_text(colour = "black", size= 10),
+        axis.text.y = element_text(colour = "black", size= 10),
+        legend.key = element_rect(fill="white", colour = "white"),
+        legend.position = "bottom", legend.direction = "horizontal",
+        legend.title = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(family = "xkcd"),
+        text = element_text(family = "xkcd")
+        )
+
+
+
 ```
 
-Læring - tysk forsvandt som kemisk sprog i de nordiske lande i 19xx og er ikke set siden.
-Hvad katten sker der i 1962?
-
-Alexander Senning blev lektor ved Århus universitet.
-Her er noget jeg har forberedt tidligere.
 
 
-Jeg har nu hvad der basalt set er et regneark, med forskellige data
+```{r, echo=FALSE, fig.width=8, dpi=600, fig.height=4.5, out.width="1920px", out.height="1080px"}
+p
+```
 
-Det er interessant primært fordi det er tilgængeligt. 
-Vi har diverse metadata. Og vi har adgang til abstracts.
-Det dækker en periode.
-Når jeg underviser kemistuderende, bliver de ofte forskrækkede over at støde på referencer til tysksproget litteratur.
-Da jeg skrev mit speciale, lærte jeg en tommelfinger regel. Hvis vi havde en eller anden uorganisk forbindelse, så var der formentlig en tysker der havde gjort noget mærkeligt med den i mellemkrigsårene.
-Det gør de, altså støder på tyske artikler - fordi tysk fra ca. 1850 til et pænt stykke op i 1930'erne, var det primære kemiske fagsprog. Før da
-fyldte fransk en del. Engelsk var der naturligvis også. 
 
-Men er det skift noget vi kan kvantificere?
+Sidste læring
+================================
 
-Vi skulle nok have fat i endnu ældre litteratur for at se skiftet ske live. Men vi kan studere de sidste rester af non-engelsk kemisk litteratur.
+* Fra at fylde ganske meget, gik tysk bort som kemisk sprog i de nordiske lande i 1978 og er ikke set siden.
+* Åben adgang til data giver et kvantitativt svar på et interessant videnskabshistorisk spørgsmål.
+* Var den åbne adgang bedre organiseret - ville vi have fået svaret lettere.
+
