@@ -262,7 +262,7 @@ library(ggplot2)
 #plotdata
 p <- ggplot(plotdata, aes(x=plotdata$year, y = plotdata$freq, group=1)) +
   geom_line(size=1.5) +
-  scale_x_discrete(breaks=seq(1948,1999,5)) +
+  scale_x_discrete(breaks=seq(1945,1999,5)) +
   labs(title="Andel artikler på tysk i Acta Chemica Scandinavica") +
   labs(x = "År", y = "%") +
   theme(axis.line.x=element_line(size= 0.5, colour = "black"),
@@ -276,7 +276,7 @@ p <- ggplot(plotdata, aes(x=plotdata$year, y = plotdata$freq, group=1)) +
         panel.grid.minor = element_blank(),
         panel.border = element_blank(),
         panel.background = element_blank(),
-        plot.title = element_text(family = "xkcd"),
+        plot.title = element_text(family = "xkcd", size=20),
         text = element_text(family = "xkcd")
         )
 
@@ -286,7 +286,7 @@ p <- ggplot(plotdata, aes(x=plotdata$year, y = plotdata$freq, group=1)) +
 
 
 
-```{r, echo=FALSE, fig.width=8, dpi=600, fig.height=4.5, out.width="1920px", out.height="1080px"}
+```{r, echo=FALSE,  dpi=600, out.width="1920px", out.height="700px"}
 p
 ```
 

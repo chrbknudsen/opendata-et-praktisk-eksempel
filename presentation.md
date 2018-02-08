@@ -196,7 +196,7 @@ Hvordan gik det så med tysk?
 
 
 
-<img src="presentation-figure/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="1920px" height="1080px" />
+<img src="presentation-figure/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="1920px" height="700px" />
 
 
 Sidste læring
